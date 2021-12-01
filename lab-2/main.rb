@@ -3,8 +3,10 @@
 def foo(number, word)
   if word[-2, 2] == "CS"
     puts number ** word.length
+    number ** word.length
   else
     puts word.reverse
+    word.reverse
   end
 end
 
@@ -27,6 +29,7 @@ def pokemon
 
   end
   puts "Your pokemons: #{pokemons}"
+  pokemons
 end
 
 foo(2, 'HelloHelloCS')
