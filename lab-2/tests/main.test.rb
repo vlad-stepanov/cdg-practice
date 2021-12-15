@@ -12,16 +12,10 @@ RSpec.describe "Main" do
     expect(foo(3, "Reverse")).to eq("esreveR")
   end
 
-  # it "#pokemon_1" do
-  #   allow_any_instance_of(Kernel).to receive(:gets).and_return()
-
-  #   expect().to eq()
-  # end
-
   it "#pokemon_2" do
     allow_any_instance_of(Kernel).to receive(:gets).and_return(2, "Picka", "Yellow", "Bark", "Black")
 
     expect(pokemon()).to eq([{name: "Picka", color: "Yellow"}, {name: "Bark", color: "Black"}])
   end
-  
+
 end

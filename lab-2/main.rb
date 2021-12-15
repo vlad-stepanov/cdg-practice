@@ -32,7 +32,12 @@ def pokemon
   pokemons
 end
 
-foo(2, 'HelloHelloCS')
-foo(3, "Reverse")
+def start
+  foo(2, "Hello")
+  foo(3, "Hello")
+  foo(2, "HelloCS")
+  
+  pokemon()
+end
 
-pokemon()
+start()
