@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+
+<h1 align="center">Users</h1>
+<%= link_to "New user", new_user_path, class:"btn btn-outline-dark" %>
+<br/><br/>
+<% @users.each do |user| %>
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-subtitle">
+        <div>
+          <sub class="text-muted"><%= user.email %></sub>
+        </div>
+        <%= user.first_name %> <%= user.last_name %>
+      </h5> 
+        <div style="float: left; width: 80px; padding-top:10px">
+          <%= link_to "Show", user, class:"btn btn-outline-dark" %>
+        </div>
+    </div>
+  </div>
+  <br/>
+<% end %>
