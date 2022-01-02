@@ -1,0 +1,51 @@
+<p id="notice"><%= notice %></p>
+
+<h1 align="center">Labs Reports</h1>
+<%= link_to "New report", new_report_path, class:"btn btn-outline-dark" %>
+<br/><br/>
+<% @reports.each do |report| %>
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title"><%= report.title %></h5>
+      <h6 class="card-subtitle mb-2 text-muted">User: <%= report.user_data %></h6>
+      <p class="card-text"><%= report.description %></p>
+      <% if !report.grade.blank? %>
+        <p class="card-text" style="float: left; width: 100px; padding-top: 5px">
+          Mark:
+          <% case (report.grade.to_i)%>
+          <% when 95..100 %>
+            <%= 'A' %>
+          <% when 86..94 %>
+            <%= 'B' %>
+          <% when 69..85 %>
+            <%= 'C' %>
+          <% when 61..68 %>
+            <%= 'D' %>
+          <% when 51..60 %>
+            <%= 'E' %>
+          <% when 31..50 %>
+            <%= 'FX' %>
+          <% when 0..30 %>
+            <%= 'F' %>
+          <% else %>
+          <%= puts('No') %>
+            <% end %>
+          (<%= report.grade %>)
+        </p>
+
+      <% else %>
+          <div style="float: left; width: 115px">
+            <%= link_to 'Add mark', edit_report_path(report), class:"btn btn-outline-dark" %>
+          </div>
+      <% end %>
+        <div style="float: left; width: 80px">
+          <%= link_to "Show", report, class:"btn btn-outline-dark" %>
+        </div>
+        <div style="float: left">
+          <%= button_to "Remove", report, method: :delete, data: {confirm: "Are you sure you want to reset the indexes?" }, class:"btn btn-outline-dark" %>
+        </div>
+    </div>
+  </div>
+  <br/>
+<% end %>
+<br/>
