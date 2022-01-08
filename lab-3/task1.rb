@@ -1,6 +1,6 @@
 #!/usr/bin/ruby
-PATH = './list.txt'
-BUFFER = './buffer.txt'
+PATH = 'students.txt'
+BUFFER = 'buffer.txt'
 
 def index
   File.foreach(PATH) { |line| puts line }
